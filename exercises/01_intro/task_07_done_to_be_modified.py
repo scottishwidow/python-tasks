@@ -31,4 +31,13 @@ $ python task_07.py
 Введіть індекс: -4
 У списку words немає такого індексу
 """
+
 words = ["word1", "word2", "word3"]
+
+user_input = int(input('Enter an index: '))
+
+if user_input > 2:
+  print('No such index.')
+
+else:
+  print(words[user_input])
