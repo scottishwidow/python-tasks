@@ -27,5 +27,16 @@ $ python task_11.py
 
 При цьому не можна змінювати список colors.
 """
+
+
 colors = ["Green", 'RED', 'Pink', 'YELLOW', 'white', 'Black']
+
+user_color = input("Enter a color: ").lower()
+
+if user_color in [color.lower() for color in colors]:
+    print("There is the color.")
+else:
+    print("There is no such color.")
+
+
 
