@@ -3,14 +3,14 @@
 Завдання 4.2
 
 Якщо запустити код завдання, буде такий вивід:
-$ python task_4_2.py
+$ python task_4_2_done.py
 ip nat inside source list ACL interface FastEthernet0/1 overload
 
 Треба змінити рядок nat таким чином, щоб на екран було виведено такий рядок
 (замінено тип інтерфейсу з FastEthernet на GigabitEthernet і рядок переведено в
 нижній регістр):
 
-$ python task_4_2.py
+$ python task_4_2_done.py
 ip nat inside source list acl interface gigabitethernet0/1 overload
 
 Попередження: у розділі 4 тести можна легко "обдурити", зробивши потрібний
@@ -20,5 +20,11 @@ ip nat inside source list acl interface gigabitethernet0/1 overload
 
 """
 
+
 nat = "ip nat inside source list ACL interface FastEthernet0/1 overload"
-print(nat)
+
+nat_modified = nat.replace("FastEthernet0/1", "Gigabitethernet0/1").lower()
+
+print(nat_modified)
+
+

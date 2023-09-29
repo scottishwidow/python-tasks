@@ -2,7 +2,7 @@ def test_task_stdout(capsys):
     """
     Перевірка роботи завдання
     """
-    import task_4_2
+    import task_4_2_done
 
     out, err = capsys.readouterr()
     correct_stdout = (
