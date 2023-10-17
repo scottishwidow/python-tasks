@@ -22,6 +22,6 @@ config = "switchport trunk allowed vlan 1,3,10,20,30,100"
 start_idx = config.index("vlan") + 5
 vlan_string = config[start_idx:]
 
-vlans = vlan_string.split(',')
+result = vlan_string.split(',')
 
-print(vlans)
+print(result)
