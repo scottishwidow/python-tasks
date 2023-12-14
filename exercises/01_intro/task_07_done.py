@@ -32,12 +32,18 @@ $ python task_07.py
 У списку words немає такого індексу
 """
 
-words = ["word1", "word2", "word3"]
+words = ["word1", "word2", "word3", "word4"]
 
-user_input = int(input('Enter an index: '))
+try:
+    user_input = int(input('Enter an index: '))
 
-if user_input > 2:
-  print('No such index.')
-
+except ValueError:
+    print('Please enter a valid integer.')
 else:
-  print(words[user_input])
+    max_index = len(words) - 1
+
+    if user_input > max_index:
+        print(f'Index should be between 0 and {max_index}.')
+    else:
+        print(words[user_input])
+
