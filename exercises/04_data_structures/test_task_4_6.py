@@ -9,7 +9,7 @@ def test_task_stdout(capsys):
     """
     Перевірка роботи завдання
     """
-    import task_4_6
+    import task_4_6_done
 
     out, err = capsys.readouterr()
     correct_stdout = unified_columns_output(

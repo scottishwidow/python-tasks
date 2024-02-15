@@ -18,11 +18,26 @@ ospf_route. Значення рядка ospf_route треба отримати �
 інакше перевіряти результат.
 """
 
-ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+ospf_route = "10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+
+parts = ospf_route.split()
+
+prefix = parts[0]
+ad_metric = parts[1].strip("[]")
+next_hop = parts[3].strip(",")
+last_update = parts[4].strip(",")
+outbound_interface = parts[5]
+
 template = """
+
 Prefix                {}
 AD/Metric             {}
 Next-Hop              {}
 Last update           {}
 Outbound Interface    {}
+
 """
+
+output = template.format(prefix, ad_metric, next_hop, last_update, outbound_interface)
+
+print(output)
